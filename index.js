@@ -20,7 +20,7 @@ server = restify.createServer({
         'application/json': function(req, res, body, cb) {
             res.setHeader('Cache-Control', 'must-revalidate');
 
-            // Does the client *explicitly* accepts application/json?
+            // Does the client *explicitly* accept application/json?
             var sendPlainText = (req.header('Accept').split(/, */).indexOf('application/json') === -1);
 
             // Send as plain text
@@ -43,7 +43,7 @@ server.use(restify.gzipResponse());
 server.pre(restify.pre.sanitizePath());
 
 /*jslint unparam:true*/
-// Default error handler. Personalize according to your needs.
+// Error handler
 server.on('uncaughtException', function(req, res, route, err) {
     console.log('******* Begin Error *******');
     console.log(route);

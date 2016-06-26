@@ -2,6 +2,7 @@
 'use strict';
 var fs = require('fs');
 
+// include all routes in this folder
 module.exports = function(server) {
     fs.readdirSync('./routes')
         .forEach(function(file) {
