@@ -13,6 +13,6 @@
     },
     "scripts": {
         "start": "node server.js",
-        "test": "node_modules/jshint/bin/jshint routes/ common/ test/ *.json server.js && node_modules/.bin/mocha --reporter spec"
+        "test": "node_modules/jshint/bin/jshint routes/ common/ test/ server.js && node_modules/.bin/mocha --reporter spec"
     }
 }
