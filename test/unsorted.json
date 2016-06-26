@@ -1,0 +1,39 @@
+{
+    "results": [{
+        "agony": 1.8009004502251125,
+        "price": 1999,
+        "provider": "Expedia",
+        "arrive_time": "2016-06-26T00:11:00",
+        "flight_num": "UA1001",
+        "depart_time": "2016-06-25T23:11:00"
+    }, {
+        "agony": 2.286029817780232,
+        "price": 1811,
+        "provider": "United",
+        "arrive_time": "2016-07-04T02:27:00",
+        "flight_num": "UA1189",
+        "depart_time": "2016-07-04T01:18:00"
+
+    }, {
+        "agony": 2.007318348144276,
+        "price": 1913,
+        "provider": "Priceline",
+        "arrive_time": "2016-06-29T20:21:00",
+        "flight_num": "UA1087",
+        "depart_time": "2016-06-29T19:17:00"
+    }, {
+        "agony": 2.174148188209843,
+        "price": 1849,
+        "provider": "Travelocity",
+        "arrive_time": "2016-07-02T12:25:00",
+        "flight_num": "UA1151",
+        "depart_time": "2016-07-02T11:18:00"
+    }, {
+        "agony": 1.9028132992327367,
+        "price": 1955,
+        "provider": "Orbitz",
+        "arrive_time": "2016-06-28T02:18:00",
+        "flight_num": "UA1045",
+        "depart_time": "2016-06-28T01:16:00"
+    }]
+}
