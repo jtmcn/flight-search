@@ -1,4 +1,6 @@
-var expect = require("chai").expect;
+'use strict';
+
+var expect = require('chai').expect;
 var restify = require('restify');
 
 
@@ -20,7 +22,7 @@ describe('Endpoints', function() {
     });
 
     describe('/bananas', function() {
-        it("should return 404", function() {
+        it('should return 404', function() {
             client.get('/bananas', function(err, req, res) {
                 expect(res.statusCode).to.equal(404);
                 done();
