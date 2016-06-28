@@ -1,25 +1,37 @@
 'use strict';
 
-var scraper = require('../common/scraper.js');
+var scraper = require('../common/scraper-promise.js');
 
-var exports = module.exports = {};
+module.exports.getAllFlights = function (cb) {
 
+    scrapeFlights(cb);
+};
 
-var getAllFlights = function getAllFlights(callback) {
-    console.log("2 getAllFlights (ctrl)");
-    scraper.getExpediaFlights(function(flightData) {
-        // console.log(flightData[0]);
-        console.log("5 returning flightData (ctrl)");
-        callback(flightData);
+function scrapeFlights(callback) {
+
+  Promise.all([
+    scraper.getFlights('expedia'),
+    scraper.getFlights('orbitz'),
+    scraper.getFlights('priceline'),
+    scraper.getFlights('travelocity'),
+    scraper.getFlights('united')
+  ]).then((flights)=> {
+    let allFlights = [];
+    flights.forEach(function (provider) {
+      // let rando = Math.floor((Math.random() * 100) + 1);
+      allFlights.push(provider.results);
     });
 
+    let flightsOut = sortFlights(allFlights);
+    // console.log(flightsOut);
+    callback(flightsOut);
 
-};
+  }).catch((error) => {
+    // handle error later
+  });
+}
 
-var sortFlights = function sortFlights() {
-    getAllFlights();
-};
-
-
-exports.sorted = sortFlights;
-exports.getAllFlights = getAllFlights;
+function sortFlights(providerArray){
+  console.log(providerArray.length);
+  return providerArray;
+}

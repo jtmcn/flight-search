@@ -5,6 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "bunyan": "0.22.1",
+    "request-promise": "^3.0.0",
     "restify": "4.0.4"
   },
   "devDependencies": {
