@@ -1,6 +1,6 @@
 'use strict';
 
-var scraper = require('../common/scraper-promise.js');
+var scraper = require('../common/scraper.js');
 
 function scrapeFlights() {
   return Promise.all([
