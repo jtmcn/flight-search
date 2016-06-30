@@ -1,18 +1,18 @@
 var R = require('ramda');
 
 function mergeFlights(providerArray) {
-  let mergedArrs = [];
+  let mergedArrays = [];
   let sorted = {
     results: []
   };
 
   providerArray.map(function (provider) {
     provider.results.map(function (flights) {
-      mergedArrs.push(flights);
+      mergedArrays.push(flights);
     });
   });
 
-  sorted.results = R.sortBy(R.prop('agony'), mergedArrs);
+  sorted.results = R.sortBy(R.prop('agony'), mergedArrays);
   return sorted;
 }
 

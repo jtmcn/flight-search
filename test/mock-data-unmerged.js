@@ -12,7 +12,7 @@ var data2 = {
   results: [{
     agony: 1.8
   }, {
-    agony: 1.8002
+    agony: 1.802
   }, {
     agony: 17
   }]

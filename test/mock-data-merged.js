@@ -1,4 +1,4 @@
-var data0 = {
+module.exports =  {
   results: [{
     agony: 1.8
   }, {
@@ -6,7 +6,7 @@ var data0 = {
   }, {
     agony: 1.802
   }, {
-    agony: 44
+    agony: 4
   }, {
     agony: 12
   }, {
@@ -20,4 +20,3 @@ var data0 = {
   }]
 };
 
-module.exports = data0;
