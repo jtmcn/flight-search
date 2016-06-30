@@ -2,9 +2,9 @@
 const fs = require('fs');
 
 // include all routes in this folder
-module.exports = function (server) {
+module.exports = server => {
   fs.readdirSync('./routes')
-    .forEach((file) => {
+    .forEach(file => {
       if (file.substr(-3, 3) === '.js' && file !== 'index.js')
         require('./' + file.replace('.js', ''))(server);
     });

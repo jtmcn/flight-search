@@ -4,9 +4,9 @@ function mergeFlights(providerArray) {
   let merged = {results: []};
 
   merged.results = providerArray
-    .map((provider) => provider.results)
+    .map(provider => provider.results)
     .reduce(mergeSorted) // merge two arrays at time
-    .map((flightObj) => flightObj);
+    .map(flightObj => flightObj);
 
   return merged;
 }
