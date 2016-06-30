@@ -1,29 +1,18 @@
 'use strict';
+const scraper = require('../common/scraper.js');
+const merger = require('../common/merger.js');
+const providers = require('../models/providers.js').all;
 
-var scraper = require('../common/scraper.js');
-var merger = require('../common/merger.js');
+let scrapeProviders = providers.map(provider => scraper.getFlights(provider));
 
-function scrapeFlights() {
-  return Promise.all([
-    scraper.getFlights('expedia'),
-    scraper.getFlights('orbitz'),
-    scraper.getFlights('priceline'),
-    scraper.getFlights('travelocity'),
-    scraper.getFlights('united')
-  ]);
+function getAllFlights(send) {
+  Promise.all(scrapeProviders)
+    .then(results => send(merger.mergeFlights(results)))
+    .catch(handleError);
 }
 
 function handleError(error) {
   console.log(error.message);
-}
-
-function getAllFlights(send) {
-  scrapeFlights()
-    .then(function (results) {
-      var merged = merger.mergeFlights(results);
-      send(merged);
-    })
-    .catch(handleError);
 }
 
 exports.getAllFlights = getAllFlights;
