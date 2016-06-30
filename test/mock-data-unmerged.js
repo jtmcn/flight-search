@@ -10,11 +10,11 @@ var data1 = {
 
 var data2 = {
   results: [{
-    agony: 17
+    agony: 1.8
   }, {
     agony: 1.8002
   }, {
-    agony: 1.8
+    agony: 17
   }]
 };
 

@@ -6,7 +6,7 @@ var data0 = {
   }, {
     agony: 1.802
   }, {
-    agony: 4
+    agony: 44
   }, {
     agony: 12
   }, {
