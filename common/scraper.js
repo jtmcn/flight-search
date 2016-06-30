@@ -1,9 +1,9 @@
 'use strict';
 
-var rp = require('request-promise');
+const rp = require('request-promise');
 
-exports.getFlights = function (provider) {
-  var options = {
+exports.getFlights = (provider) => {
+  let options = {
     uri: 'http://localhost:9000/scrapers/' + provider,
     json: true
   };
