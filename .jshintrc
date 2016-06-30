@@ -7,7 +7,7 @@
     // Enforcing
     "bitwise": true, // true: Prohibit bitwise operators (&, |, ^, etc.)
     "camelcase": true, // true: Identifiers must be in camelCase
-    "curly": true, // true: Require {} for every new block or scope
+    "curly": false, // true: Require {} for every new block or scope
     "eqeqeq": true, // true: Require triple equals (===) for comparison
     "forin": true, // true: Require filtering for..in loops with obj.hasOwnProperty()
     "freeze": true, // true: prohibits overwriting prototypes of native objects such as Array, Date etc.
@@ -27,7 +27,7 @@
     //   "double" : require double quotes
     "undef": true, // true: Require all non-global variables to be declared (prevents global leaks)
     "unused": false, // true: Require all defined variables be used
-    "strict": false, // true: Requires all functions run in ES5 Strict Mode
+    "strict": true, // true: Requires all functions run in ES5 Strict Mode
     "maxparams": false, // {int} Max number of formal params allowed per function
     "maxdepth": false, // {int} Max depth of nested blocks (within functions)
     "maxstatements": 40, // {int} Max number statements per function
@@ -67,10 +67,8 @@
     "node": true, // Node.js
     "nonstandard": true, // Widely adopted globals (escape, unescape, etc)
 
-
     // Custom Globals
     "globals": { // additional predefined global variables
-        "Promise": true, // so we dont get errors from redefining Promise
-        "done": true //used by mocha
+        "Promise": true // so we dont get errors from redefining Promise
     }
 }
