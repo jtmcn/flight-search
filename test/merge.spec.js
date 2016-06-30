@@ -1,7 +1,7 @@
 'use strict';
 
 var expect = require('chai').expect;
-var flightsCtrl = require('../controllers/flights.js');
+var merger = require('../common/merger.js').mergeFlights;
 var unmerged = require('./mock-data-unmerged');
 var premerged = require('./mock-data-merged');
 
@@ -9,8 +9,8 @@ var premerged = require('./mock-data-merged');
 
     it('should be identical to pre-merged', function () {
 
-      var merged = flightsCtrl.mergeFlights(unmerged);
-      var arraysAreIdentical = compare(merged, premerged);
+      var mergedResults = merger(unmerged);
+      var arraysAreIdentical = compare(mergedResults, premerged);
       expect(arraysAreIdentical).to.be.true;
 
     });
